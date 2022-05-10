@@ -6,11 +6,11 @@ The BioPSy GUI is launched using the BioPSy JAR file ([Java JDK 6 or higher](htt
 ```
 java -jar BioPSy.jar
 ```
-####SBML model
+#### SBML model
 
 The user can browse for a model file which should be in `SBML` (System Biology Markup Language) format. Once the file is selected it will be displayed in the ***SBML*** tab. If there are errors parsing the model file they will be displayed.
 
-####Time series
+#### Time series
 Time-series data file should contain experimental data in `CSV` (Comma Separated Values) format. All species defined in the `SBML` model must be present in the time series file.
 
 **Important:**
@@ -26,7 +26,7 @@ In order for changes to take place the file should be saved before the execution
 
 **Save** button overwrites chosen `CSV` file and **Save as** button let's user specify the name of the file to save modified time series.
 
-####Parameters
+#### Parameters
 
 After the model file is parsed the list of parameters are displayed in ***Parameters*** tab. Here a user can select parameters in the model to synthesise.  
 
@@ -52,10 +52,10 @@ Choosing the bounds which do not bound the entire species ranges over the chosen
 
 Also the user can specify a ***noise*** value for each species (defualt 1e-1).
 
-####Log
+#### Log
 All the events hapenning during the execution are displayed here.
 
-####Output
+#### Output
 Once the synthesis has started, the ***Output*** tab displays the computation output. Each entry of the table features the box (vector of intervals), the time value and the box type. Boxes are of three types:
 + `SAT` boxes satisfy parameter sysnthesis for all the time point starting from the initial one up to the ***current*** time point
 + `UNSAT` the boxes does not satisfy parameter synthesis for the current time point, 
@@ -64,7 +64,7 @@ Once the synthesis has started, the ***Output*** tab displays the computation ou
 *Note:*
 Only `SAT` boxes obtained for the last time boxes are guaranteed to satisfy the entire time series.
 
-####Plot(2D only)
+#### Plot(2D only)
 This feature is enabled only when two parameters are chosen for synthesis. This tab contains graphical representation of parameter synthesis. Legend: 
 
 |Name|Description|
@@ -75,16 +75,16 @@ This feature is enabled only when two parameters are chosen for synthesis. This 
 |SAT| boxes satisfying the entire time series|
 |Unexplored| boxes which were not yet analysed by the SMT solver (appear only with defaul algorithm)|
 
-####Advanced options
+#### Advanced options
 The **Advanced options** button allows the user to specify the path to the `dReal` and `ParSyn` binary.
 
-#####dReal
+##### dReal
 If the user has a different version of `dReal` installed, she or he can change the path to point to the binary of the different version. Also user is able to specify `dReal` option. By default only `--precision=1e-3` option is used. For the full list of options run:
 ```
 ./dReal --help
 ```
 
-#####ParSyn
+##### ParSyn
 `ParSyn` is the computation engine for `BioPSy`. If the user has a different version of `ParSyn` installed, she or he can change the path to point to the binary of the different version. By default the algorithm partitions the parameter space with the specified precision and terminates when a box satisfying the entire time series is found. Also user is able to specify following `ParSyn` options:
 
 ```
@@ -93,6 +93,6 @@ If the user has a different version of `dReal` installed, she or he can change t
 --full-synthesis - performs full parameter synthesis. In other words, it identifies all feasible sets in the defined parameter space. Can be used in combination with --partition.
 ```
 
-####Execution
+#### Execution
 Computation can be executed by pressing **Run** button.
 
